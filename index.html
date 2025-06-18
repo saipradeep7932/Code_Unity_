@@ -5,6 +5,71 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeUnity</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Apply Inter font family and smooth scrolling globally */
+      body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Custom Blob Animation for background shapes */
+      @keyframes blob-slower {
+        0% {
+          transform: scale(1) translate(0px, 0px);
+        }
+        33% {
+          transform: scale(1.1) translate(40px, -60px);
+        }
+        66% {
+          transform: scale(0.9) translate(-30px, 30px);
+        }
+        100% {
+          transform: scale(1) translate(0px, 0px);
+        }
+      }
+
+      .animate-blob-slower {
+        animation: blob-slower 10s infinite cubic-bezier(0.6, 0.01, 0.3, 1);
+      }
+
+      /* Delay for multiple blobs */
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-3000 {
+        animation-delay: 3s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+
+      /* Pulse animation for subtle glows */
+      @keyframes pulse-slow {
+        0%, 100% {
+          opacity: 0.2;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-pulse-slow {
+        animation: pulse-slow 6s infinite ease-in-out;
+      }
+
+      /* Custom text shadow for better readability on light backgrounds */
+      .text-shadow-sm {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
