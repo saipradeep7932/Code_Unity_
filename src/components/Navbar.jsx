@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 const colors = {
   primary: "#1A3C5A",
   secondary: "#2DD4BF",
-  background: "#0F172A",
+  background: "#0F172A", // Solid black background
   text: {
-    primary: "#F9FAFC",
-    secondary: "#D1D5DB",
+    primary: "#F9FAFC",  // White
+    secondary: "#D1D5DB", // Light gray
   },
 };
 
@@ -35,12 +35,12 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[color:colors.background] shadow-lg"
-          : "bg-[color:colors.background]/90 backdrop-blur-sm shadow-sm"
+          ? "bg-[#0F172A] shadow-lg" // Solid black when scrolled
+          : "bg-[#0F172A] shadow-md" // Solid black when at top
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-3xl font-extrabold text-[color:colors.text.primary] tracking-tight">
+        <h1 className="text-3xl font-extrabold text-white tracking-tight">
           Code<span className="text-[color:colors.secondary]">Unity</span>
         </h1>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
             <a
               key={idx}
               href={`#${link.toLowerCase()}`}
-              className="text-[color:colors.text.secondary] font-medium text-lg hover:text-[color:colors.secondary] transition duration-300 ease-in-out px-2 py-1 rounded-md relative group scroll-smooth"
+              className="text-white font-medium text-lg hover:text-[color:colors.secondary] transition duration-300 ease-in-out px-2 py-1 rounded-md relative group scroll-smooth"
             >
               {link}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[color:colors.secondary] transition-all duration-300 group-hover:w-full"></span>
@@ -74,13 +74,13 @@ const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden px-4 pb-4 bg-[color:colors.background] shadow-inner"
+          className="md:hidden px-4 pb-4 bg-[#0F172A] shadow-inner"
         >
           {links.map((link, idx) => (
             <a
               key={idx}
               href={`#${link.toLowerCase()}`}
-              className="block py-3 text-[color:colors.text.secondary] hover:text-[color:colors.secondary] border-b border-gray-700 last:border-b-0 text-lg font-medium transition duration-300"
+              className="block py-3 text-white hover:text-[color:colors.secondary] border-b border-gray-700 last:border-b-0 text-lg font-medium transition duration-300"
               onClick={() => setOpen(false)}
             >
               {link}
